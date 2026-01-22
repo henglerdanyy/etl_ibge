@@ -31,9 +31,13 @@ O projeto será desenvolvido em etapas:
    - src
      - extraction
        - extract_states.py
+     - transformation
+        - transform_states.py
    - data
      - raw
-     - states.json
+       - states.json
+    - processed
+       - states.csv
    - README.md
  
 (A estrutura será expandida conforme novas etapas do pipeline forem implementadas.)
@@ -45,8 +49,25 @@ O projeto será desenvolvido em etapas:
 - JSON
 - Pandas (etapas futuras)
 
+## 🔄 Pipeline ETL
+
+### Extração (Extract)
+- Consumo da API pública do IBGE
+- Coleta dos dados de estados brasileiros
+- Armazenamento dos dados brutos em formato JSON (`data/raw/states.json`)
+
+### Transformação (Transform)
+- Leitura do JSON bruto
+- Seleção e normalização dos campos relevantes
+- Conversão dos dados para formato CSV
+- Salvamento em `data/processed/states.csv`
+
+### Carga (Load)
+- Etapa futura
+- Os dados transformados poderão ser carregados em banco de dados ou data warehouse
+
 ## 🚧 Status do Projeto
 
 ✅ Extração dos dados de estados finalizada  
-🚧 Próximas etapas em desenvolvimento
+🚧 Atualmente na etapa de transformação dos dados de estados, com dados extraídos da API do IBGE e convertidos para formato tabular (CSV).
 
