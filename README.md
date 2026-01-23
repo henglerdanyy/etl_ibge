@@ -34,12 +34,14 @@ O projeto será desenvolvido em etapas:
        - extract_municipios.py
      - transformation
         - transform_states.py
+        - transform_municipios.py
    - data
      - raw
        - states.json
        - municipios.json
     - processed
        - states.csv
+       - municipios.csv
    - README.md
  
 (A estrutura será expandida conforme novas etapas do pipeline forem implementadas.)
@@ -59,10 +61,9 @@ O projeto será desenvolvido em etapas:
 - Armazenamento dos dados brutos em formato JSON (`data/raw/states.json`)
 
 ### Transformação (Transform)
-- Leitura do JSON bruto
-- Seleção e normalização dos campos relevantes
-- Conversão dos dados para formato CSV
-- Salvamento em `data/processed/states.csv`
+- Flatten da hierarquia geográfica do IBGE (município → microrregião → mesorregião → UF)
+- Tratamento de registros incompletos (ignora registros sem UF)
+- Geração de CSV analítico em `data/processed`
 
 ### Carga (Load)
 - Etapa futura
@@ -73,14 +74,12 @@ O projeto será desenvolvido em etapas:
 Em desenvolvimento.
 
 Etapas concluídas:
-- Extração dos dados de estados brasileiros
-- Extração dos dados de municípios por estado
-- Transformação dos dados de estados (JSON → CSV)
+- Extração de estados brasileiros (JSON)
+- Extração de municípios por estado (JSON)
+- Transformação de estados (JSON → CSV)
+- Transformação de municípios (JSON → CSV)
 
 Próximas etapas:
-- Transformação dos dados de municípios
+- Load em banco de dados PostegreSQL
 - Extração de dados populacionais por município e ano
-- Etapa de carregamento (Load)
-
-
 
