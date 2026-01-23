@@ -31,11 +31,13 @@ O projeto será desenvolvido em etapas:
    - src
      - extraction
        - extract_states.py
+       - extract_municipios.py
      - transformation
         - transform_states.py
    - data
      - raw
        - states.json
+       - municipios.json
     - processed
        - states.csv
    - README.md
@@ -68,6 +70,17 @@ O projeto será desenvolvido em etapas:
 
 ## 🚧 Status do Projeto
 
-✅ Extração dos dados de estados finalizada  
-🚧 Atualmente na etapa de transformação dos dados de estados, com dados extraídos da API do IBGE e convertidos para formato tabular (CSV).
+Em desenvolvimento.
+
+Etapas concluídas:
+- Extração dos dados de estados brasileiros
+- Extração dos dados de municípios por estado
+- Transformação dos dados de estados (JSON → CSV)
+
+Próximas etapas:
+- Transformação dos dados de municípios
+- Extração de dados populacionais por município e ano
+- Etapa de carregamento (Load)
+
+
 
