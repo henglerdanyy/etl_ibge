@@ -23,7 +23,6 @@ O projeto será desenvolvido em etapas:
 
 1. Extração dos dados de estados brasileiros
 2. Extração dos dados de municípios por estado
-3. Extração de dados populacionais por município e ano
 
 ## 📁 Estrutura do Projeto
 
@@ -34,22 +33,26 @@ O projeto será desenvolvido em etapas:
        - extract_municipios.py
      - transformation
         - transform_states.py
+        - transform_municipios.py
+     - load
+        - load_municipios.py
    - data
      - raw
        - states.json
        - municipios.json
     - processed
        - states.csv
+       - municipios.csv
    - README.md
- 
-(A estrutura será expandida conforme novas etapas do pipeline forem implementadas.)
+
 
 ## 🛠️ Tecnologias Utilizadas
 
 - Python 3.x
 - Requests
 - JSON
-- Pandas (etapas futuras)
+- Pandas 
+- PostgreSQL
 
 ## 🔄 Pipeline ETL
 
@@ -65,22 +68,30 @@ O projeto será desenvolvido em etapas:
 - Salvamento em `data/processed/states.csv`
 
 ### Carga (Load)
-- Etapa futura
-- Os dados transformados poderão ser carregados em banco de dados ou data warehouse
+- Inserção dos dados tratados no PostgreSQL
+- Tabela relacional para municípios.
+
+## 🗄️ Banco de Dados
+
+Banco utilizado: PostgreSQL
+
+Tabela criada:
+    - municipios
+
+Campos:
+- municipio_id
+- municipio_nome
+- estado_id
+- estado_sigla
+- estado_nome
 
 ## 🚧 Status do Projeto
 
-Em desenvolvimento.
+Projeto concluído.
 
-Etapas concluídas:
-- Extração dos dados de estados brasileiros
-- Extração dos dados de municípios por estado
-- Transformação dos dados de estados (JSON → CSV)
+Pipeline ETL funcional com dados reais do IBGE, incluindo carga em banco de dados PostgreSQL.
 
-Próximas etapas:
-- Transformação dos dados de municípios
-- Extração de dados populacionais por município e ano
-- Etapa de carregamento (Load)
+Alvo de possíveis atualizações escaláveis futuras.
 
 
 
