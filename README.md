@@ -34,8 +34,11 @@ O projeto será desenvolvido em etapas:
      - transformation
         - transform_states.py
         - transform_municipios.py
+<<<<<<< HEAD
      - load
         - load_municipios.py
+=======
+>>>>>>> 8bef8ac8a733f81738fadddabd33e1397d6f9970
    - data
      - raw
        - states.json
@@ -62,10 +65,9 @@ O projeto será desenvolvido em etapas:
 - Armazenamento dos dados brutos em formato JSON (`data/raw/states.json`)
 
 ### Transformação (Transform)
-- Leitura do JSON bruto
-- Seleção e normalização dos campos relevantes
-- Conversão dos dados para formato CSV
-- Salvamento em `data/processed/states.csv`
+- Flatten da hierarquia geográfica do IBGE (município → microrregião → mesorregião → UF)
+- Tratamento de registros incompletos (ignora registros sem UF)
+- Geração de CSV analítico em `data/processed`
 
 ### Carga (Load)
 - Inserção dos dados tratados no PostgreSQL
@@ -89,9 +91,21 @@ Campos:
 
 Projeto concluído.
 
+<<<<<<< HEAD
 Pipeline ETL funcional com dados reais do IBGE, incluindo carga em banco de dados PostgreSQL.
 
 Alvo de possíveis atualizações escaláveis futuras.
 
 
+=======
+Etapas concluídas:
+- Extração de estados brasileiros (JSON)
+- Extração de municípios por estado (JSON)
+- Transformação de estados (JSON → CSV)
+- Transformação de municípios (JSON → CSV)
+
+Próximas etapas:
+- Load em banco de dados PostegreSQL
+- Extração de dados populacionais por município e ano
+>>>>>>> 8bef8ac8a733f81738fadddabd33e1397d6f9970
 
